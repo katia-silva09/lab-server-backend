@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { ProductosModule } from './module/productos/productos.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -23,6 +24,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       autoLoadEntities: true,
       synchronize: true,
     }),
+    ProductosModule,
 
     ObserveModule.forRoot({
       appKey: 'YOUR_APP_KEY',
